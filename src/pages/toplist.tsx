@@ -1,7 +1,15 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
 const TopListPage: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Head>
+        <title>TopListPage</title>
+      </Head>
+      <div>TopList</div>
+    </>
+  );
 };
 
 export default TopListPage;
