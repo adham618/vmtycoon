@@ -1,5 +1,7 @@
-import type { NextPage } from "next";
-import Head from "next/head";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+
+import Hero from '@/components/Hero';
 
 const Home: NextPage = () => {
   return (
@@ -7,7 +9,7 @@ const Home: NextPage = () => {
       <Head>
         <title>VMTycoon</title>
       </Head>
-      <h1 className="animate__animated animate__bounce">An animated element</h1>
+      <Hero />
     </>
   );
 };
