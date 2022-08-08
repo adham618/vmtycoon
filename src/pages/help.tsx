@@ -1,7 +1,15 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
 const HelpPage: NextPage = () => {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Head>
+        <title>Help</title>
+      </Head>
+      <div>HelpPage</div>
+    </>
+  );
 };
 
 export default HelpPage;
