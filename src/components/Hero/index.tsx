@@ -62,6 +62,7 @@ export default function Hero() {
           </div>
           <div className='flex-auto self-center lg:w-6/12'>
             <div>
+               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className='mw-full w-full p-5'
                 src='/images/hero-img.png'
