@@ -1,3 +1,163 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scroll bar style */
+body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+body::-webkit-scrollbar-track,
+.table-wrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+html.dark body::-webkit-scrollbar-track,
+html.dark .table-wrapper::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb,
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(to top, #ffbd84 0%, #ff1f8e 100%);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: linear-gradient(to left, #ffbd84 0%, #ff1f8e 100%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-poppins;
+}
+
+h1 {
+  -webkit-animation: hue 6s infinite linear;
+  animation: hue 6s infinite linear;
+}
+
+p {
+  @apply leading-7;
+}
+
+a.btn svg {
+  animation: 2s infinite arrowanim;
+}
+
+a:hover span {
+  right: -80px;
+}
+
+header.sticky {
+  @apply h-[65px] bg-white;
+}
+
+header.move-left {
+  @apply pr-9;
+}
+
+.dark header.sticky {
+  @apply h-[65px] bg-black;
+}
+
+.cursor.cursor-border.hover {
+  @apply hidden;
+}
+
+.cursor.point.hover {
+  @apply -ml-10 -mt-10 h-20 w-20 bg-cursor opacity-20;
+}
+
+.cursor {
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 75ms ease-out;
+}
+
+.cursor.cursor-border {
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+    margin 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 100ms ease-out;
+}
+
+.pagination li.active a {
+  @apply border-t-blue-700 border-b-blue-700 bg-blue-700 text-white;
+}
+
+@media screen and (max-width: 767px) {
+  .pagination li a {
+    @apply hidden;
+  }
+
+  .pagination li.active a,
+  .pagination li.active + li a,
+  .pagination li.prev a,
+  .pagination li.next a {
+    @apply flex;
+  }
+}
+
+#scrollTop.show {
+  @apply right-8 transition-all duration-300;
+}
+
+#menu-toggler.active span {
+  @apply top-[50%];
+}
+
+#menu-toggler.active .top {
+  @apply rotate-45;
+}
+
+#menu-toggler.active .middle,
+#menu-toggler.active .bottom {
+  @apply -rotate-45;
+}
+
+.nav-wrapper.show {
+  width: 100vw;
+}
+
+.nav-wrapper.show::after {
+  display: block;
+}
+
+.nav-wrapper.show .nav {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.text-animation {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 6s infinite linear;
+  animation: hue 6s infinite linear;
+}
+
+@keyframes hue {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 2000px 0;
+  }
+}
+
+@keyframes arrowanim {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(8px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
