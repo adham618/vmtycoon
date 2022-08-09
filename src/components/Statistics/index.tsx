@@ -2,6 +2,7 @@
 import * as React from 'react';
 
 import Statistic from '@/components/Statistics/Statistic';
+
 const statistics = [
   {
     id: '0',

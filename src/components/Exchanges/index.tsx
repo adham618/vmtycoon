@@ -1,6 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
+import Exchange from '@/components/Exchanges/Exchange';
+const exchanges = [
+  {
+    id: '0',
+    image: '/images/pangolin.png',
+    altImage: 'pangolin',
+    title: 'Pangolin Exchange',
+  },
+  {
+    id: '1',
+    image: '/images/joe.png',
+    altImage: 'Joi',
+    title: 'TraderJoe Exchange',
+  },
+  {
+    id: '2',
+    image: '/images/lyd.png',
+    altImage: 'Lydia Exchange',
+    title: 'Lydia Exchange',
+  },
+];
 export default function Exchanges() {
   return (
     <section className='bg-white-200 py-[60px] dark:bg-black-500 dark:bg-none sm:py-[80px] lg:py-[100px]'>
@@ -16,49 +37,15 @@ export default function Exchanges() {
             Click at the images to visit the exchanges for $biz and $dolla.
           </p>
         </div>
-        {/* <!-- row --> */}
         <div className='mt-14 justify-between gap-9 text-center md:flex'>
-          {/* <!-- card --> */}
-          <div
-            className='wow animate__animated animate__fadeInUp mb-8 rounded-lg border border-transparent bg-white p-6 dark:border-[#252525] dark:bg-[#191919] md:mb-0 md:w-4/12'
-            data-wow-delay='.2s'
-            data-wow-offset='10'
-          >
-            <div className='m-auto max-w-[130px]'>
-              <img
-                className='m-auto w-full'
-                src='/images/pangolin.png'
-                alt='pangolin'
-              />
-            </div>
-            <p className='text-lg font-normal leading-7'>Pangolin Exchange</p>
-          </div>
-          {/* <!-- card --> */}
-          <div
-            className='wow animate__animated animate__fadeInUp mb-8 rounded-lg border border-transparent bg-white p-6 dark:border-[#252525]  dark:bg-[#191919] md:mb-0 md:w-4/12'
-            data-wow-delay='.4s'
-            data-wow-offset='10'
-          >
-            <div className='m-auto max-w-[130px]'>
-              <img className='m-auto w-full' src='/images/joe.png' alt='Joi' />
-            </div>
-            <p className='text-lg font-normal leading-7'>TraderJoe Exchange</p>
-          </div>
-          {/* <!-- card --> */}
-          <div
-            className='wow animate__animated animate__fadeInUp mb-8 rounded-lg border border-transparent bg-white p-6 dark:border-[#252525] dark:bg-[#191919] md:mb-0 md:w-4/12'
-            data-wow-delay='.6s'
-            data-wow-offset='10'
-          >
-            <div className='m-auto max-w-[130px] '>
-              <img
-                className='m-auto w-full'
-                src='/images/lyd.png'
-                alt='Lydia Exchange'
-              />
-            </div>
-            <p className='text-lg font-normal leading-7'>Lydia Exchange</p>
-          </div>
+          {exchanges.map((exchange) => (
+            <Exchange
+              key={exchange.id}
+              image={exchange.image}
+              altImage={exchange.altImage}
+              title={exchange.title}
+            />
+          ))}
         </div>
       </div>
     </section>
