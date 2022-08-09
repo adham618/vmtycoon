@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import ButtonArrow from '@/components/buttons/ButtonArrow';
+
 export default function Hero() {
   return (
     <section className='relative h-auto bg-hero-gradient bg-cover bg-center bg-no-repeat pt-[120px] pb-20 dark:bg-black-900 dark:bg-none lg:h-[750px] lg:pt-[100px] lg:pb-[100px] 2xl:h-[100vh]'>
@@ -19,50 +21,17 @@ export default function Hero() {
               10,000 Tycoons are headed to the metaverse after news of untapped
               business opportunities! Tycoons come in all shapes and sizes.
             </p>
-            <a
+            <ButtonArrow content='Open App' href='#' wowDelay='.6s' />{' '}
+            <ButtonArrow
+              className='bg-red-gradient'
+              content='Mint Tycoon'
               href='#'
-              className='btn wow animate__animated animate__fadeInUp relative my-0 mx-auto flex w-max items-center overflow-hidden rounded-[100px] bg-blue-gradient py-4 px-8  text-center font-poppins text-[16px] font-normal text-white shadow-btn outline-none lg:inline-flex lg:items-center lg:justify-center lg:whitespace-nowrap'
-              data-wow-delay='.6s'
-            >
-              Open App
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
-            </a>
-            <a
-              href='#'
-              className='btn wow animate__animated animate__fadeInUp relative mx-auto mt-4 flex w-max items-center overflow-hidden rounded-[100px] bg-red-gradient py-4 px-8  text-center font-poppins text-[16px] font-normal text-white shadow-btn outline-none lg:inline-flex lg:items-center lg:justify-center lg:whitespace-nowrap'
-              data-wow-delay='.6s'
-            >
-              Mint Tycoon
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path
-                  fillRule='evenodd'
-                  d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
-            </a>
+              wowDelay='.6s'
+            />
           </div>
           <div className='flex-auto self-center lg:w-6/12'>
             <div>
-               {/* eslint-disable-next-line @next/next/no-img-element */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className='mw-full w-full p-5'
                 src='/images/hero-img.png'
