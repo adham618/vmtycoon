@@ -16,6 +16,14 @@ const links = [
 export default function Header() {
   // const [open, setopen] = React.useState(false);
   const [onTop, setOnTop] = React.useState(true);
+  // const [mobileMenu, setMobileMenu] = React.useState(false);
+  const [menuToggler, setMenuToggler] = React.useState(false);
+
+  const toggleClass = () => {
+    // setMobileMenu(!mobileMenu);
+    setMenuToggler(!menuToggler);
+  };
+
   const handleScroll = () => {
     if (onTop !== (window.pageYOffset === 0)) {
       setOnTop(window.pageYOffset === 0);
@@ -62,7 +70,10 @@ export default function Header() {
                 </li>
                 <li
                   id='menu-toggler'
-                  className='relative ml-3 h-[30px] w-[30px] cursor-pointer lg:hidden'
+                  onClick={toggleClass}
+                  className={`${
+                    menuToggler ? 'active' : ''
+                  } relative ml-3 h-[30px] w-[30px] cursor-pointer lg:hidden`}
                 >
                   <span className='top absolute top-[20%] h-[3px] w-[25px] bg-black-900 transition-all duration-300 dark:bg-white '></span>
                   <span className='middle absolute top-[50%] h-[3px] w-[25px] bg-black-900 transition-all duration-300 dark:bg-white'></span>
@@ -74,14 +85,19 @@ export default function Header() {
         </div>
       </header>
       {/* Mobile Nav */}
-      <div className="nav-wrapper after:bg fixed top-0 left-0 z-[9998] box-border h-[100vh] w-[0px] transition-transform after:fixed after:top-0 after:left-0 after:right-0 after:bottom-0 after:hidden after:h-full  after:w-full after:bg-black-900/50 after:content-[''] lg:hidden">
+      <div
+        onClick={toggleClass}
+        className={`${
+          menuToggler ? 'show' : ''
+        } nav-wrapper after:bg lg:hidden' fixed top-0 left-0 z-[9998] box-border h-[100vh] w-[0px] transition-transform after:fixed after:top-0 after:left-0 after:right-0 after:bottom-0 after:hidden  after:h-full after:w-full after:bg-black-900/50 after:content-['']`}
+      >
         <div className='nav  fixed top-0 left-0 z-[9999] h-full w-[280px] translate-x-[-300px] bg-black-900 transition-transform duration-300'>
           <h2 className='bg-white px-5 py-4 font-poppins text-xl font-normal text-black-900'>
             Mobile Menu
           </h2>
           <ul className='nav-links'>
             {links.map(({ href, label }) => (
-              <li key={`${href}${label}`} className='inline-flex'>
+              <li key={`${href}${label}`}>
                 <Link href={href}>
                   <a className='block p-4 text-sm text-white '>{label}</a>
                 </Link>
