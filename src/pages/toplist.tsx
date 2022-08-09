@@ -1,7 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import BlockSection from '@/components/BlockSection/BlockSection';
 import Exchanges from '@/components/Exchanges';
+import Ranks from '@/components/Ranks';
 
 const TopListPage: NextPage = () => {
   return (
@@ -9,6 +11,8 @@ const TopListPage: NextPage = () => {
       <Head>
         <title>TopListPage</title>
       </Head>
+      <BlockSection />
+      <Ranks />
       <Exchanges />
     </>
   );
