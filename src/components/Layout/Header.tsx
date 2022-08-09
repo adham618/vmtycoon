@@ -9,7 +9,6 @@ const links = [
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/office', label: 'Office' },
   { href: '/toplist', label: 'Toplist' },
-  { href: '/budget', label: 'Budget' },
   { href: '/help', label: 'Help' },
 ];
 
