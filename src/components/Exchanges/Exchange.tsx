@@ -2,13 +2,13 @@ import * as React from 'react';
 
 import NextImage from '@/components/NextImage';
 
-type indexProps = {
+type ExchangeProps = {
   image: string;
   altImage: string;
   title: string;
 } & React.ComponentPropsWithoutRef<'a'>;
 
-export default function Exchange({ image, altImage, title }: indexProps) {
+export default function Exchange({ image, altImage, title }: ExchangeProps) {
   return (
     <div
       className='wow animate__animated animate__fadeInUp mb-8 rounded-lg border border-transparent bg-white p-6 dark:border-[#252525] dark:bg-[#191919] md:mb-0 md:w-4/12'

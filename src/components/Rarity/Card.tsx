@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import NextImage from '@/components/NextImage';
 
-type indexProps = {
+type CardProps = {
   background: string;
   textColor: string;
   title: string;
@@ -18,7 +18,7 @@ export default function Card({
   Rarity,
   image,
   altImage,
-}: indexProps) {
+}: CardProps) {
   return (
     <div>
       <span

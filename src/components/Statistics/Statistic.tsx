@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import NextImage from '@/components/NextImage';
 
-type indexProps = {
+type StatisticProps = {
   image: string;
   altImage: string;
   symbol?: string;
@@ -18,7 +18,7 @@ export default function Statistic({
   coloredSymbol,
   price,
   title,
-}: indexProps) {
+}: StatisticProps) {
   return (
     <div className='mb-7 flex items-center justify-start sm:w-1/2 lg:mb-0 lg:w-3/12'>
       <div className='h-[80px] w-[80px] rounded-tl-[8px] rounded-tr-[40px] rounded-br-[8px] rounded-bl-[40px] bg-white p-4'>

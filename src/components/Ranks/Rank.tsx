@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-type indexProps = {
+type RankProps = {
   Rank: string;
   Username: string;
   Tycoon: string;
@@ -20,7 +20,7 @@ export default function Rank({
   color,
   Level,
   Address,
-}: indexProps) {
+}: RankProps) {
   return (
     <tr className='border-b border-b-t-border hover:bg-[#fbfbfb]/80 hover:text-black-900'>
       <th className='p-4' scope='row'>
