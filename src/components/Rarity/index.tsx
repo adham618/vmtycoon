@@ -4,8 +4,6 @@ import Card from '@/components/Rarity/Card';
 const Raritys = [
   {
     id: 0,
-    background: 'bg-common',
-    textColor: 'text-slate-400',
     title: 'Common',
     Rarity: '0.7',
     image: '/images/avax-logo.svg',
@@ -13,8 +11,6 @@ const Raritys = [
   },
   {
     id: 1,
-    background: 'bg-uncommon',
-    textColor: 'text-black-500',
     title: 'Uncommon',
     Rarity: '0.7',
     image: '/images/avax-logo.svg',
@@ -22,8 +18,6 @@ const Raritys = [
   },
   {
     id: 2,
-    background: 'bg-rare',
-    textColor: 'text-slate-400',
     title: 'Rare',
     Rarity: '0.7',
     image: '/images/avax-logo.svg',
@@ -31,8 +25,6 @@ const Raritys = [
   },
   {
     id: 3,
-    background: 'bg-legendary',
-    textColor: 'text-white',
     title: 'Legendary',
     Rarity: '0.7',
     image: '/images/avax-logo.svg',
@@ -40,12 +32,32 @@ const Raritys = [
   },
   {
     id: 4,
-    background: 'bg-exotic',
-    textColor: 'text-black-500',
     title: 'Exotic',
     Rarity: '0.7',
     image: '/images/avax-logo.svg',
     altImage: 'avax',
+  },
+];
+const colors = [
+  {
+    Rarity: 'Common',
+    style: 'bg-common text-slate-400',
+  },
+  {
+    Rarity: 'Uncommon',
+    style: 'bg-uncommon text-black-500',
+  },
+  {
+    Rarity: 'Rare',
+    style: 'bg-rare text-slate-400',
+  },
+  {
+    Rarity: 'Legendary',
+    style: 'bg-legendary text-white',
+  },
+  {
+    Rarity: 'Exotic',
+    style: 'bg-exotic text-black-500',
   },
 ];
 export default function Rarity() {
@@ -58,11 +70,12 @@ export default function Rarity() {
           </h5>
         </div>
         <div className='flex flex-wrap items-center justify-center gap-10 lg:w-3/4 lg:justify-start'>
-          {Raritys.map((Rarity) => (
+          {Raritys.map((Rarity, i) => (
             <Card
+              className={`${
+                Rarity.title === colors[i].Rarity && colors[i].style
+              }`}
               key={Rarity.id}
-              background={Rarity.background}
-              textColor={Rarity.textColor}
               title={Rarity.title}
               Rarity={Rarity.Rarity}
               image={Rarity.image}

@@ -1,10 +1,11 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import NextImage from '@/components/NextImage';
 
 type CardProps = {
-  background: string;
-  textColor: string;
+  className: string;
   title: string;
   Rarity: string;
   image: string;
@@ -12,8 +13,7 @@ type CardProps = {
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function Card({
-  background,
-  textColor,
+  className,
   title,
   Rarity,
   image,
@@ -22,7 +22,10 @@ export default function Card({
   return (
     <div>
       <span
-        className={`${background} ${textColor} mb-2 block rounded-md px-2 py-1 font-poppins text-[11px] font-semibold `}
+        className={clsxm(
+          'mb-2 block rounded-md px-2 py-1 font-poppins text-[11px] font-semibold ',
+          className
+        )}
       >
         {title}
       </span>
