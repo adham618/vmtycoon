@@ -1,6 +1,8 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import * as React from 'react';
+
+import Button from '@/components/buttons/Button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -14,7 +16,6 @@ const links = [
 export default function Header() {
   // const [open, setopen] = React.useState(false);
   const [onTop, setOnTop] = React.useState(true);
-  const router = useRouter();
   const handleScroll = () => {
     if (onTop !== (window.pageYOffset === 0)) {
       setOnTop(window.pageYOffset === 0);
@@ -30,8 +31,8 @@ export default function Header() {
     <>
       <header
         className={`${
-          onTop ? 'bg-none' : 'bg-white'
-        } fixed top-0 right-0 left-0 z-50 flex h-[85px] items-center border-b border-white/10 transition-all duration-[1s] `}
+          onTop ? '' : 'sticky'
+        } fixed top-0 right-0 left-0 z-50 flex h-[85px] items-center border-b border-white/10 transition-all duration-[1s]`}
       >
         <div className='container'>
           <div className='flex items-center justify-between gap-4'>
@@ -50,25 +51,14 @@ export default function Header() {
               </ul>
               <ul className='flex items-center gap-1'>
                 <li className='flex items-center' id='mode-toggler'>
-                  <div className='relative z-50 m-2 flex items-center'>
-                    <label
-                      htmlFor='switch'
-                      className='relative inline-block h-[35px] w-[35px]'
-                    >
-                      <input type='checkbox' id='switch' className='hidden' />
-                      <span className="absolute right-0 left-0 bottom-0 top-0 cursor-pointer rounded-[50px] border border-solid border-[#e2e2e2] bg-white shadow-lg duration-[400ms] before:absolute before:left-[4px] before:bottom-[4px] before:h-[24px] before:w-[24px] before:rounded-[50%] before:bg-[#ffc400] before:bg-sun before:bg-center before:bg-no-repeat before:content-[''] dark:border-white/30 dark:bg-[#242424] dark:before:bg-blue-600 dark:before:bg-moon"></span>
-                    </label>
-                  </div>
+                  <ThemeToggle />
                 </li>
                 <li className='inline-flex'>
-                  <a
+                  <Button
+                    // id='connect_wallet'
+                    content='Connect Wallet'
                     href='#'
-                    id='connect_wallet'
-                    className='relative overflow-clip rounded-[100px] bg-blue-gradient px-5 font-openSans text-sm font-normal leading-9 text-white shadow-btn'
-                  >
-                    Connect Wallet
-                    <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
-                  </a>
+                  />
                 </li>
                 <li
                   id='menu-toggler'
@@ -90,42 +80,13 @@ export default function Header() {
             Mobile Menu
           </h2>
           <ul className='nav-links'>
-            <li>
-              <a href='#' className='block p-4 text-sm text-white '>
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href='./marketplace.html'
-                className='block p-4 text-sm text-white '
-              >
-                Marketplace
-              </a>
-            </li>
-            <li>
-              <a href='./office.html' className='block p-4 text-sm text-white '>
-                Office
-              </a>
-            </li>
-            <li>
-              <a
-                href='./toplist.html'
-                className='block p-4 text-sm text-white '
-              >
-                Toplist
-              </a>
-            </li>
-            <li>
-              <a href='#' className='block p-4 text-sm text-white '>
-                Budget
-              </a>
-            </li>
-            <li>
-              <a href='./help.html' className='block p-4 text-sm text-white '>
-                Help
-              </a>
-            </li>
+            {links.map(({ href, label }) => (
+              <li key={`${href}${label}`} className='inline-flex'>
+                <Link href={href}>
+                  <a className='block p-4 text-sm text-white '>{label}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
           <div
             id='close'
