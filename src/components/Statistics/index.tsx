@@ -1,58 +1,61 @@
 /* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
+import Statistic from '@/components/Statistics/Statistic';
+const statistics = [
+  {
+    id: '0',
+    image: '/images/businesses-head.png',
+    altImage: 'business',
+    symbol: '$',
+    coloredSymbol: '',
+    price: '0.14',
+    title: 'Biz Price',
+  },
+  {
+    id: '1',
+    image: '/images/dollar-head.png',
+    altImage: 'dollar',
+    symbol: '$',
+    coloredSymbol: '',
+    price: '0.001',
+    title: 'Dollar Price',
+  },
+  {
+    id: '2',
+    image: '/images/network.svg',
+    altImage: 'network',
+    symbol: '',
+    coloredSymbol: '●',
+    price: '50',
+    title: 'Network Fees',
+  },
+  {
+    id: '3',
+    image: '/images/avax-logo.svg',
+    altImage: 'avax',
+    symbol: '$',
+    coloredSymbol: '',
+    price: '85.18',
+    title: 'Avalanche Price',
+  },
+];
 export default function Statistics() {
   return (
     <section className='bg-section-gradient py-7 dark:bg-[#151515] dark:bg-none'>
       <div className='container'>
         <div className='flex-wrap items-center justify-between sm:flex'>
-          <div className='mb-7 flex items-center justify-start sm:w-1/2 lg:mb-0 lg:w-3/12'>
-            <div className='h-[80px] w-[80px] rounded-tl-[8px] rounded-tr-[40px] rounded-br-[8px] rounded-bl-[40px] bg-white p-4'>
-              <img src='/images/businesses-head.png' alt='business' />
-            </div>
-            <div className='ml-5'>
-              <h4 className='font-poppins text-[30px]  font-bold text-slate-900 dark:text-slate-200 md:text-[35px]'>
-                $<span>0.14</span>
-              </h4>
-              <p className='text-lg font-medium leading-6'>Biz Price</p>
-            </div>
-          </div>
-          <div className='mb-7 flex items-center justify-start sm:w-1/2 lg:mb-0 lg:w-3/12'>
-            <div className='h-[80px] w-[80px] rounded-tl-[8px] rounded-tr-[40px] rounded-br-[8px] rounded-bl-[40px] bg-white p-4'>
-              <img src='/images/dollar-head.png' alt='dollar' />
-            </div>
-            <div className='ml-5'>
-              <h4 className='font-poppins text-[30px]  font-bold text-slate-900 dark:text-slate-200 md:text-[35px]'>
-                $<span>0.001</span>
-              </h4>
-              <p className='text-lg font-medium leading-6'>Dollar Price</p>
-            </div>
-          </div>
-          <div className='mb-7 flex items-center justify-start sm:mb-0 sm:w-1/2 lg:w-3/12'>
-            <div className='h-[80px] w-[80px] rounded-tl-[8px] rounded-tr-[40px] rounded-br-[8px] rounded-bl-[40px] bg-white p-4'>
-              <img src='/images/network.svg' alt='network' />
-            </div>
-            <div className='ml-5'>
-              <h4 className='font-poppins text-[30px]  font-bold text-slate-900 dark:text-slate-200 md:text-[35px]'>
-                <span className='text-[30px] text-green-700  md:text-[35px]'>
-                  ●
-                </span>
-                <span>50</span>
-              </h4>
-              <p className='text-lg font-medium leading-6'>Network Fees</p>
-            </div>
-          </div>
-          <div className='flex items-center justify-start sm:w-1/2 lg:w-3/12'>
-            <div className='h-[80px] w-[80px] rounded-tl-[8px] rounded-tr-[40px] rounded-br-[8px] rounded-bl-[40px] bg-white p-4'>
-              <img src='/images/avax-logo.svg' alt='avax' />
-            </div>
-            <div className='ml-5'>
-              <h4 className='font-poppins text-[30px] font-bold text-slate-900 dark:text-slate-200 md:text-[35px]'>
-                $<span>85.18</span>
-              </h4>
-              <p className='text-lg font-medium leading-6'>Avalanche Price</p>
-            </div>
-          </div>
+          {statistics.map((statistic) => (
+            <Statistic
+              key={statistic.id}
+              image={statistic.image}
+              altImage={statistic.altImage}
+              symbol={statistic.symbol}
+              coloredSymbol={statistic.coloredSymbol}
+              price={statistic.price}
+              title={statistic.title}
+            />
+          ))}
         </div>
       </div>
     </section>
