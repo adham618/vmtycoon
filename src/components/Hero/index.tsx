@@ -23,7 +23,7 @@ export default function Hero() {
             </p>
             <ButtonArrow content='Open App' href='#' wowDelay='.6s' />{' '}
             <ButtonArrow
-              className='bg-red-gradient'
+              className='mt-4 bg-red-gradient'
               content='Mint Tycoon'
               href='#'
               wowDelay='.6s'
