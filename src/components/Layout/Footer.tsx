@@ -1,7 +1,24 @@
 import * as React from 'react';
 
+import Contract from '@/components/Layout/Contract';
 import Copyright from '@/components/Layout/Copyright';
-
+const contracts = [
+  {
+    id: '0',
+    title: 'Tycoons',
+    contractNumber: '0x5496B2E166CE7ecBa67c526F2BABcCfCc0d3880d',
+  },
+  {
+    id: '1',
+    title: 'Businesses',
+    contractNumber: '0x15c841043e13fFAA9a99FabEa236D40F45615623',
+  },
+  {
+    id: '2',
+    title: 'Dolla',
+    contractNumber: '0x4B322765D761984C0f9E72200B62a9b445F38caC',
+  },
+];
 export default function Footer() {
   return (
     <footer className='bg-white py-10 text-center dark:bg-black-900'>
@@ -10,59 +27,13 @@ export default function Footer() {
           <p className='mb-4 text-[17px] font-medium text-slate-900 dark:text-white md:mb-1'>
             Our Avalanche Contracts:
           </p>
-          <p className='mb-4 flex flex-wrap items-center justify-center gap-1 break-all md:mb-1'>
-            Tycoons:
-            <a href='#' className='text-[12px] sm:text-[16px]'>
-              0x5496B2E166CE7ecBa67c526F2BABcCfCc0d3880d
-            </a>
-            <a href='#'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5 animate-none'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path d='M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z' />
-                <path d='M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z' />
-              </svg>
-            </a>
-          </p>
-          <p className='mb-4 flex flex-wrap items-center justify-center gap-1  break-all md:mb-1'>
-            Businesses:
-            <a href='#' className='text-[12px] sm:text-[16px]'>
-              {' '}
-              0x15c841043e13fFAA9a99FabEa236D40F45615623
-            </a>
-            <a href='#'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5 animate-none'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path d='M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z' />
-                <path d='M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z' />
-              </svg>
-            </a>
-          </p>
-          <p className='mb-4 flex flex-wrap items-center justify-center gap-1 break-all md:mb-1'>
-            Dolla:
-            <a href='#' className='text-[12px] sm:text-[16px]'>
-              {' '}
-              0x4B322765D761984C0f9E72200B62a9b445F38caC
-            </a>
-            <a href='#'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                className='h-5 w-5 animate-none'
-                viewBox='0 0 20 20'
-                fill='currentColor'
-              >
-                <path d='M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z' />
-                <path d='M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z' />
-              </svg>
-            </a>
-          </p>
+          {contracts.map((contract) => (
+            <Contract
+              key={contract.id}
+              title={contract.title}
+              contractNumber={contract.contractNumber}
+            />
+          ))}
         </div>
         <ul className='mt-10 flex items-center justify-center gap-5'>
           <li>
