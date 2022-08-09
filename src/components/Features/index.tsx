@@ -18,7 +18,6 @@ export default function Features() {
             learn a little about economics on your journey.
           </p>
         </div>
-        {/* <!-- row --> */}
         <div className='mt-14 justify-between gap-9 text-center md:flex md:text-left'>
           {/* <!-- card --> */}
           <div
