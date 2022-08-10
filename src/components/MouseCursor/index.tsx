@@ -9,6 +9,22 @@ export default function MouseCursor() {
       setX(e.clientX);
       setY(e.clientY);
     };
+    //change cursor style on hoveringn any link on the document
+    document.querySelectorAll('a').forEach((link) => {
+      //ON mouse over
+      link.addEventListener('mouseover', function () {
+        document.querySelectorAll('.cursor').forEach((cursor) => {
+          cursor.classList.add('hover');
+        });
+      });
+
+      //On mouse leave
+      link.addEventListener('mouseleave', function () {
+        document.querySelectorAll('.cursor').forEach((cursor) => {
+          cursor.classList.remove('hover');
+        });
+      });
+    });
   });
   const styles = {
     transform: `translate(${x}px, ${y}px)`,
