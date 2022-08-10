@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 const DropdownItems = [
   {
     id: 0,
@@ -52,9 +54,7 @@ export default function Dropdown() {
     <div className='relative'>
       <button
         onClick={toggleClass}
-        className={`${
-          DropdownToggle ? 'focused' : ''
-        } flex items-center justify-between rounded-3xl bg-blue-gradient px-6 py-2 font-poppins text-[15px] font-normal text-slate-200`}
+        className='flex items-center justify-between rounded-3xl bg-blue-gradient px-6 py-2 font-poppins text-[15px] font-normal text-slate-200'
         type='button'
         id='menu-button'
         aria-expanded='true'
@@ -76,29 +76,31 @@ export default function Dropdown() {
         </svg>
       </button>
 
-      <div
-        className={`${
-          !DropdownToggle ? 'block' : 'hidden'
-        } absolute left-0 z-10 mt-1  min-w-max origin-top-right rounded bg-white py-4 shadow-dropdown dark:bg-[#191919] dark:shadow`}
-        role='menu'
-        aria-orientation='vertical'
-        aria-labelledby='menu-button'
-        tabIndex={-1}
-      >
-        <div id='results'>
-          {DropdownItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.link}
-              className='block py-2 px-5  hover:bg-neutral-100 dark:hover:bg-[#232323]'
-            >
-              <h5 className='text-[15px]  font-normal text-black-500 dark:text-slate-200'>
-                {item.item}
-              </h5>
-            </a>
-          ))}
+      {DropdownToggle && (
+        <div
+          className={clsxm(
+            'absolute left-0 z-10 mt-1 min-w-max origin-top-right rounded bg-white py-4 shadow-dropdown dark:bg-[#191919] dark:shadow'
+          )}
+          role='menu'
+          aria-orientation='vertical'
+          aria-labelledby='menu-button'
+          tabIndex={-1}
+        >
+          <div id='results'>
+            {DropdownItems.map((item) => (
+              <a
+                key={item.id}
+                href={item.link}
+                className='block py-2 px-5  hover:bg-neutral-100 dark:hover:bg-[#232323]'
+              >
+                <h5 className='text-[15px]  font-normal text-black-500 dark:text-slate-200'>
+                  {item.item}
+                </h5>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
