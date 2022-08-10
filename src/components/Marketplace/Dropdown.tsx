@@ -60,7 +60,9 @@ export default function Dropdown() {
   const toggleClass = () => {
     setDropdownToggle(!DropdownToggle);
   };
-  document.addEventListener('mousedown', closeDropdown);
+  if (typeof window !== 'undefined') {
+    document.addEventListener('mousedown', closeDropdown);
+  }
   return (
     <div className='relative' ref={catMenu}>
       <button
