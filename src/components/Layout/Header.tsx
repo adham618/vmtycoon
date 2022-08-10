@@ -13,13 +13,10 @@ const links = [
 ];
 
 export default function Header() {
-  // const [open, setopen] = React.useState(false);
   const [onTop, setOnTop] = React.useState(true);
-  // const [mobileMenu, setMobileMenu] = React.useState(false);
   const [menuToggler, setMenuToggler] = React.useState(false);
 
   const toggleClass = () => {
-    // setMobileMenu(!mobileMenu);
     setMenuToggler(!menuToggler);
   };
 
