@@ -21,7 +21,7 @@ export default function Modal() {
             onClick={() => setShowModal(false)}
             className='fixed top-0 right-0 left-0 bottom-0 z-50 bg-black-900/90 px-4'
           ></div>
-          <div className='absolute left-0 right-0 z-[999] mx-auto mt-4 w-full max-w-[600px] rounded-lg border border-white bg-white p-7 dark:bg-black-900 '>
+          <div className='absolute left-0 right-0 z-[999] mx-auto mt-4 w-full max-w-[90%] rounded-lg border border-white bg-white p-7 dark:bg-black-900 sm:max-w-[600px] '>
             <div className='mb-10 flex items-center justify-between'>
               <h4 className='text-xl font-semibold leading-7 text-slate-900 dark:text-white'>
                 Setting
