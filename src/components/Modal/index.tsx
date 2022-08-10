@@ -14,7 +14,6 @@ export default function Modal() {
         content='Connect Wallet'
         href='#'
       />
-      ;
       {showModal && (
         <>
           <div
