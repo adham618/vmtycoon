@@ -75,7 +75,8 @@ export default function Rarity() {
           {Raritys.map((Rarity, i) => (
             <Card
               className={`${
-                Rarity.title === colors[i].Rarity && colors[i].style
+                colors.find((el) => el.Rarity === Rarity.title) &&
+                colors.find((el) => el.Rarity === Rarity.title)?.style
               }`}
               key={Rarity.id}
               title={Rarity.title}

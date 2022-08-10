@@ -76,6 +76,28 @@ const items = [
     Price: '100 AVAX',
   },
 ];
+const colors = [
+  {
+    Rarity: 'Common',
+    style: 'bg-common text-slate-400',
+  },
+  {
+    Rarity: 'Uncommon',
+    style: 'bg-uncommon text-black-500',
+  },
+  {
+    Rarity: 'Rare',
+    style: 'bg-rare text-slate-400',
+  },
+  {
+    Rarity: 'Legendary',
+    style: 'bg-legendary text-white',
+  },
+  {
+    Rarity: 'Exotic',
+    style: 'bg-exotic text-black-500',
+  },
+];
 export default function Marketplace() {
   return (
     <section className='bg-white py-16 dark:bg-black-900'>
@@ -153,6 +175,10 @@ export default function Marketplace() {
         <div className='-mx-3 mt-5 flex-wrap items-center justify-between sm:flex'>
           {items.map((item) => (
             <Card
+              className={`${
+                colors.find((el) => el.Rarity === item.RarityType) &&
+                colors.find((el) => el.Rarity === item.RarityType)?.style
+              }`}
               key={item.id}
               CardImage={item.CardImage}
               WorkerId={item.WorkerId}

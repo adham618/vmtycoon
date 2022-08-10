@@ -1,8 +1,11 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import NextImage from '@/components/NextImage';
 
 type CardProps = {
+  className: string;
   CardImage: string;
   WorkerId: string;
   Level: string;
@@ -12,6 +15,7 @@ type CardProps = {
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function Card({
+  className,
   CardImage,
   WorkerId,
   Level,
@@ -39,7 +43,12 @@ export default function Card({
           <div className='mb-1 font-poppins text-[17px] font-normal text-white'>
             Rarity
             <span>{Rarity}</span>
-            <span className='mb-2 rounded-md bg-common px-2 py-1 font-poppins text-[11px] font-semibold text-slate-400'>
+            <span
+              className={clsxm(
+                'mb-2 rounded-md  px-2 py-1 font-poppins text-[11px] font-semibold',
+                className
+              )}
+            >
               {RarityType}
             </span>
             <p className='mb-3 font-poppins text-[17px] font-normal text-white'>
