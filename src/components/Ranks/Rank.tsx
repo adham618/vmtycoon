@@ -1,23 +1,23 @@
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 type RankProps = {
+  className: string;
   Rank: string;
   Username: string;
   Tycoon: string;
   Rarity: string;
-  background: string;
-  color: string;
   Level: string;
   Address: string;
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function Rank({
+  className,
   Rank,
   Username,
   Tycoon,
   Rarity,
-  background,
-  color,
   Level,
   Address,
 }: RankProps) {
@@ -30,7 +30,10 @@ export default function Rank({
       <td className='p-4'>{Tycoon}</td>
       <td className='p-4'>
         <span
-          className={`${background} ${color} rounded-md  px-2 py-1 font-poppins text-[11px] font-semibold`}
+          className={clsxm(
+            'rounded-md  px-2 py-1 font-poppins text-[11px] font-semibold',
+            className
+          )}
         >
           {Rarity}
         </span>

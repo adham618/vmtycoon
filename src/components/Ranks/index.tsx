@@ -8,8 +8,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'Bruvv',
     Rarity: 'Rare',
-    background: 'bg-rare',
-    color: 'text-slate-400',
     Level: '43',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -19,8 +17,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'NOT THE IRS',
     Rarity: 'Rare',
-    background: 'bg-rare',
-    color: 'text-slate-400',
     Level: '40',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -30,8 +26,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
     Rarity: 'Exotic',
-    background: 'bg-exotic',
-    color: 'text-black-500',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -41,8 +35,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
     Rarity: 'Exotic',
-    background: 'bg-exotic',
-    color: 'text-black-500',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -52,8 +44,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
     Rarity: 'Legendary',
-    background: 'bg-legendary',
-    color: 'text-white',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -63,8 +53,6 @@ const ranks = [
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
     Rarity: 'Legendary',
-    background: 'bg-legendary',
-    color: 'text-white',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -73,9 +61,7 @@ const ranks = [
     Rank: '7',
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
-    Rarity: 'Common	',
-    background: 'bg-common',
-    color: 'text-slate-400',
+    Rarity: 'Common',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
@@ -84,13 +70,34 @@ const ranks = [
     Rank: '8',
     Username: 'meta mogul',
     Tycoon: 'charlesbronson',
-    Rarity: 'Common	',
-    background: 'bg-common',
-    color: 'text-slate-400',
+    Rarity: 'Common',
     Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
 ];
+const colors = [
+  {
+    Rarity: 'Common',
+    style: 'bg-common text-slate-400',
+  },
+  {
+    Rarity: 'Uncommon',
+    style: 'bg-uncommon text-black-500',
+  },
+  {
+    Rarity: 'Rare',
+    style: 'bg-rare text-slate-400',
+  },
+  {
+    Rarity: 'Legendary',
+    style: 'bg-legendary text-white',
+  },
+  {
+    Rarity: 'Exotic',
+    style: 'bg-exotic text-black-500',
+  },
+];
+
 export default function Ranks() {
   return (
     <section className='py-16 dark:bg-black-900'>
@@ -138,6 +145,10 @@ export default function Ranks() {
                 <tbody className='text-sm'>
                   {ranks.map((rank) => (
                     <Rank
+                      className={`${
+                        colors.find((el) => el.Rarity === rank.Rarity) &&
+                        colors.find((el) => el.Rarity === rank.Rarity)?.style
+                      }`}
                       key={rank.id}
                       Rank={rank.Rank}
                       Username={rank.Username}
@@ -145,8 +156,6 @@ export default function Ranks() {
                       Rarity={rank.Rarity}
                       Level={rank.Level}
                       Address={rank.Address}
-                      background={rank.background}
-                      color={rank.color}
                     />
                   ))}
                 </tbody>
