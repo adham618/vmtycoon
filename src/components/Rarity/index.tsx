@@ -72,7 +72,7 @@ export default function Rarity() {
           </h5>
         </div>
         <div className='flex flex-wrap items-center justify-center gap-10 lg:w-3/4 lg:justify-start'>
-          {Raritys.map((Rarity, i) => (
+          {Raritys.map((Rarity) => (
             <Card
               className={`${
                 colors.find((el) => el.Rarity === Rarity.title) &&
