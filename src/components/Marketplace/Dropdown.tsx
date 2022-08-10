@@ -46,12 +46,23 @@ const DropdownItems = [
 ];
 export default function Dropdown() {
   const [DropdownToggle, setDropdownToggle] = React.useState(false);
+  const catMenu = React.useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const closeDropdown = (e: any) => {
+    if (
+      catMenu.current &&
+      DropdownToggle &&
+      !catMenu.current.contains(e.target)
+    ) {
+      setDropdownToggle(false);
+    }
+  };
   const toggleClass = () => {
     setDropdownToggle(!DropdownToggle);
   };
-
+  document.addEventListener('mousedown', closeDropdown);
   return (
-    <div className='relative'>
+    <div className='relative' ref={catMenu}>
       <button
         onClick={toggleClass}
         className='flex items-center justify-between rounded-3xl bg-blue-gradient px-6 py-2 font-poppins text-[15px] font-normal text-slate-200'
