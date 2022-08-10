@@ -36,7 +36,7 @@ export default function Card({
           <p className='mb-2 font-poppins text-[17px] font-normal text-white'>
             Level <span>{Level}</span>
           </p>
-          <p className='mb-1 font-poppins text-[17px] font-normal text-white'>
+          <div className='mb-1 font-poppins text-[17px] font-normal text-white'>
             Rarity
             <span>{Rarity}</span>
             <span className='mb-2 rounded-md bg-common px-2 py-1 font-poppins text-[11px] font-semibold text-slate-400'>
@@ -51,7 +51,7 @@ export default function Card({
             >
               Buy Now
             </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
