@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import * as React from 'react';
 
-import Button from '@/components/buttons/Button';
+import Modal from '@/components/Modal';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const links = [
@@ -58,11 +58,7 @@ export default function Header() {
                   <ThemeToggle />
                 </li>
                 <li className='inline-flex'>
-                  <Button
-                    // id='connect_wallet'
-                    content='Connect Wallet'
-                    href='#'
-                  />
+                  <Modal />
                 </li>
                 <li
                   id='menu-toggler'
