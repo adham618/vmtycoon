@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import '../styles/globals.css';
 
 import Layout from '@/components/Layout';
+import MouseCursor from '@/components/MouseCursor';
 const isServer = typeof window === 'undefined';
 const WOW = !isServer ? require('wow.js') : null;
 function MyApp({ Component, pageProps }: AppProps) {
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute='class' defaultTheme='system'>
       <Layout>
+        <MouseCursor />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
