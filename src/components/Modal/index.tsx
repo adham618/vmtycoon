@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import Button from '@/components/buttons/Button';
-
 export default function Modal() {
   const [showModal, setShowModal] = React.useState(false);
   const handleUpdate = () => {
@@ -9,11 +7,13 @@ export default function Modal() {
   };
   return (
     <>
-      <Button
+      <a
         onClick={() => setShowModal(true)}
-        content='Connect Wallet'
-        href='#'
-      />
+        className='relative cursor-pointer overflow-clip rounded-[100px] bg-blue-gradient px-5 font-openSans text-sm font-normal leading-9 text-white shadow-btn'
+      >
+        Connect Wallet
+        <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
+      </a>
       {showModal && (
         <>
           <div

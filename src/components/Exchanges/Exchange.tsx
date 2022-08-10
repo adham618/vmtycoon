@@ -17,6 +17,7 @@ export default function Exchange({ image, altImage, title }: ExchangeProps) {
     >
       <div className='m-auto max-w-[130px]'>
         <NextImage
+          priority
           className='m-auto w-full'
           width={100}
           height={100}
