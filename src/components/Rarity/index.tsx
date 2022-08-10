@@ -38,6 +38,7 @@ const Raritys = [
     altImage: 'avax',
   },
 ];
+
 const colors = [
   {
     Rarity: 'Common',
@@ -60,6 +61,7 @@ const colors = [
     style: 'bg-exotic text-black-500',
   },
 ];
+
 export default function Rarity() {
   return (
     <section className='bg-rarity-gradient pt-[100px] pb-10 dark:bg-black-900 dark:bg-none'>

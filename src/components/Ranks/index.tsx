@@ -43,7 +43,7 @@ const ranks = [
     Rarity: 'Exotic',
     background: 'bg-exotic',
     color: 'text-black-500',
-    Level: '',
+    Level: '50',
     Address: '0x1978fF6F1c0A3760696169B001647f7f7D9600C8',
   },
   {

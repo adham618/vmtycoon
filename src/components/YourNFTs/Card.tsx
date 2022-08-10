@@ -2,17 +2,18 @@ import * as React from 'react';
 
 import NextImage from '@/components/NextImage';
 
-type WalletProps = {
+type CardProps = {
   image: string;
   TycoonID: string;
   state: string;
-  level: number;
+  level: string;
   Pending: string;
   Dolla: string;
-  Rarity: number;
+  Rarity: string;
+  RarityBtn: string;
 } & React.ComponentPropsWithoutRef<'a'>;
 
-export default function Wallet({
+export default function Card({
   image,
   TycoonID,
   state,
@@ -20,12 +21,13 @@ export default function Wallet({
   Pending,
   Dolla,
   Rarity,
-}: WalletProps) {
+  RarityBtn,
+}: CardProps) {
   return (
     <div className='mb-5 px-3 transition-all duration-1000 ease-in-out hover:-translate-y-2 sm:w-1/2 md:w-4/12 lg:w-3/12'>
       <div className='rounded-lg'>
         <a href='#' className='block overflow-hidden rounded-lg'>
-          <NextImage width='100%' height='100%' src={image} alt='cardImage' />
+          <NextImage width={285} height={375} src={image} alt='cardImage' />
         </a>
         <div className='m-auto w-[95%] -translate-y-10 rounded-lg rounded-tl-[40px] bg-white p-5 text-center shadow-NFT-body dark:bg-black-500'>
           <h4 className='mb-1 text-xl font-semibold text-slate-900 dark:text-slate-200 lg:text-2xl'>
@@ -46,7 +48,7 @@ export default function Wallet({
           <p className='mb-1 font-poppins text-[17px] font-normal text-slate-600  dark:text-gray-400'>
             Rarity: <span>{Rarity} </span>
             <span className='mb-2 rounded-md bg-common px-2 py-1 font-poppins text-[11px] font-semibold text-black-400'>
-              Common
+              {RarityBtn}
             </span>
           </p>
           <div className='mt-2 flex flex-wrap justify-center'>
