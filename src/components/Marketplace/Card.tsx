@@ -1,8 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
 
 import clsxm from '@/lib/clsxm';
-
-import NextImage from '@/components/NextImage';
 
 type CardProps = {
   className: string;
@@ -26,13 +25,7 @@ export default function Card({
   return (
     <div className='mb-5 px-3 sm:w-1/2 md:w-4/12 lg:w-3/12'>
       <div className='overflow-hidden rounded-md border border-slate-400'>
-        <NextImage
-          priority
-          width={285}
-          height={360}
-          src={CardImage}
-          alt='cardImage'
-        />
+        <img src={CardImage} alt='cardImage' />
         <div className='bg-black-400 p-5 text-center'>
           <h4 className='mb-1 text-lg font-semibold text-white'>
             Worker #<span>{WorkerId}</span>

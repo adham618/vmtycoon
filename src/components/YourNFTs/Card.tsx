@@ -1,6 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from 'react';
-
-import NextImage from '@/components/NextImage';
 
 type CardProps = {
   image: string;
@@ -27,7 +26,7 @@ export default function Card({
     <div className='mb-5 px-3 transition-all duration-1000 ease-in-out hover:-translate-y-2 sm:w-1/2 md:w-4/12 lg:w-3/12'>
       <div className='rounded-lg'>
         <a href='#' className='block overflow-hidden rounded-lg'>
-          <NextImage width={285} height={375} src={image} alt='cardImage' />
+          <img src={image} alt='cardImage' />
         </a>
         <div className='m-auto w-[95%] -translate-y-10 rounded-lg rounded-tl-[40px] bg-white p-5 text-center shadow-NFT-body dark:bg-black-500'>
           <h4 className='mb-1 text-xl font-semibold text-slate-900 dark:text-slate-200 lg:text-2xl'>
