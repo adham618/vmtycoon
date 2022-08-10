@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
+      <Html lang='en' className='scroll-smooth'>
         <Head>
           {/* Google fonts */}
           <link
