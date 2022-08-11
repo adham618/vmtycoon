@@ -15,6 +15,7 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
+    "@reach/slider": "^0.17.0",
     "clsx": "^1.2.1",
     "next": "12.2.4",
     "next-themes": "^0.2.0",

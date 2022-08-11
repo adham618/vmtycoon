@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+import { Slider } from '@reach/slider';
 import * as React from 'react';
 
-import NextImage from '@/components/NextImage';
+import '@reach/slider/styles.css';
 
+import NextImage from '@/components/NextImage';
 type CardProps = {
   image: string;
   TycoonID: string;
@@ -25,7 +27,7 @@ export default function Card({
   RarityBtn,
 }: CardProps) {
   const [showModal, setShowModal] = React.useState(false);
-  const [Range, setRange] = React.useState('11993');
+  const [Range, setRange] = React.useState(11993);
 
   const handleDOLLA = () => {
     setShowModal(false);
@@ -117,14 +119,14 @@ export default function Card({
                   </p>
                 </div>
                 <div className='grid w-full grid-cols-10 items-center gap-1'>
-                  <input
-                    type='range'
+                  <Slider
                     name='range'
-                    className='col-span-8 h-2 w-full appearance-none rounded-md bg-[#E80170]'
+                    className='col-span-8'
                     value={Range}
-                    onChange={(e) => setRange(e.target.value)}
-                    min='0'
-                    max='11993'
+                    onChange={(value) => setRange(value)}
+                    min={0}
+                    max={11993}
+                    step={10}
                   />
                   <label
                     htmlFor='range'
