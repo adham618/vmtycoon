@@ -143,7 +143,7 @@ export default function Ranks() {
                   </tr>
                 </thead>
                 <tbody className='text-sm'>
-                  {ranks.map((rank) => (
+                  {ranks.slice(0, 8).map((rank) => (
                     <Rank
                       className={`${
                         colors.find((el) => el.Rarity === rank.Rarity) &&
