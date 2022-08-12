@@ -17,6 +17,7 @@ type WalletProps = {
   firstBtn: string;
   secondBtn: string;
   thirdBtn?: string;
+  BIZBalance: string;
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function Wallet({
@@ -30,6 +31,7 @@ export default function Wallet({
   firstBtn,
   secondBtn,
   thirdBtn,
+  BIZBalance,
 }: WalletProps) {
   const [showTradeModal, setShowTradeModal] = React.useState(false);
   const [Range, setRange] = React.useState(83);
@@ -115,7 +117,7 @@ export default function Wallet({
                 <div className='content mb-4'>
                   <p className='font-poppins text-[13px] font-normal leading-5 text-[#646364] dark:text-gray-400'>
                     You have:{' '}
-                    <span className='font-semibold'>{YourBalance}</span> BIZ.
+                    <span className='font-semibold'>{BIZBalance}</span> BIZ.
                   </p>
                   <p className='font-poppins text-[13px] font-normal leading-5 text-[#646364] dark:text-gray-400'>
                     How much do you like to swap?

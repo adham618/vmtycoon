@@ -6,7 +6,7 @@ const wallets = [
     id: 0,
     image: '/images/businesses-head.png',
     title: '$BIZ',
-    YourBalance: '48.0466',
+    YourBalance: '1054.33',
     PendingBalance: '11.1609',
     BusinessesActive: '964.02',
     perDay: '405',
@@ -45,6 +45,7 @@ export default function Wallets() {
               secondBtn={wallet.secondBtn}
               thirdBtn={wallet.thirdBtn}
               className={`${wallet.thirdBtn === '' && 'hidden'}`}
+              BIZBalance={wallets[0].YourBalance}
             />
           ))}
         </div>
