@@ -88,7 +88,6 @@ export default function Wallet({
           </li>
           <li className={clsxm('px-2', className)}>
             <ButtonArrow
-              onClick={() => setShowTradeModal(true)}
               className='mt-4 py-2 px-4'
               content={thirdBtn}
               href='#'
@@ -109,7 +108,7 @@ export default function Wallet({
                   className='rounded-full border-2 border-solid border-black'
                 />
                 <div className='flex items-center justify-between'>
-                  <h4 className='text-xl font-semibold leading-10 text-black dark:text-white'>
+                  <h4 className='mt-4 text-xl font-semibold leading-10 text-black dark:text-white'>
                     Swap BIZ for DOLLA
                   </h4>
                 </div>
