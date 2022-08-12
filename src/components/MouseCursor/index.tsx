@@ -3,7 +3,7 @@ import * as React from 'react';
 export default function MouseCursor() {
   const [x, setX] = React.useState(0);
   const [y, setY] = React.useState(0);
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     document.onmousemove = (event) => {
       const e = event;
       setX(e.clientX);
