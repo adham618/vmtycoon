@@ -27,10 +27,14 @@ export default function Card({
   RarityBtn,
 }: CardProps) {
   const [showModal, setShowModal] = React.useState(false);
+  const [showUpgradeModal, setShowUpgradeModal] = React.useState(false);
   const [Range, setRange] = React.useState(11993);
 
   const handleDOLLA = () => {
     setShowModal(false);
+  };
+  const handleSkipTime = () => {
+    setShowUpgradeModal(false);
   };
   return (
     <>
@@ -82,6 +86,7 @@ export default function Card({
                 Add dolla
               </button>
               <button
+                onClick={() => setShowUpgradeModal(true)}
                 className='mr-2 mb-2 rounded bg-[#0d6efd] px-2 py-1 text-sm text-white transition-all ease-in-out hover:bg-[#0b5ed7]'
                 type='button'
               >
@@ -159,7 +164,53 @@ export default function Card({
           ></div>
         </>
       )}
+      {showUpgradeModal && (
+        <>
+          <div className='fixed inset-0 z-[9999] mx-auto flex w-auto max-w-[360px] overflow-y-auto overflow-x-hidden outline-none focus:outline-none'>
+            <div className='relative my-6 mx-auto flex w-auto max-w-[360px] items-center justify-center'>
+              <div className='relative flex w-full max-w-[90%] flex-col items-center gap-3 rounded-md bg-white p-7 text-center shadow-lg outline-none focus:outline-none dark:bg-black-900 sm:max-w-[600px]'>
+                <NextImage
+                  width={60}
+                  height={60}
+                  src='/images/businesses-head.png'
+                  alt='image-header'
+                  className='rounded-full border-2 border-solid border-black'
+                />
+                <div className='flex items-center justify-between'>
+                  <h4 className='text-xl font-semibold leading-10 text-black dark:text-white'>
+                    Your Tycoon is on lunch <br /> break
+                  </h4>
+                </div>
+                <div className='content'>
+                  <p className='font-poppins text-[13px] font-normal leading-5 text-[#646364] dark:text-gray-400'>
+                    You can upgrade in 21h 06m 49s or you can skip the wait time
+                    for 96 BIZ
+                  </p>
+                </div>
+                <div className='flex gap-2'>
+                  <button
+                    onClick={handleSkipTime}
+                    className='mb-2 rounded-md bg-[#FFB700] px-4 py-2 text-xs text-black transition-all ease-in-out hover:bg-[#ffc021]'
+                  >
+                    Skip the wait time
+                  </button>
+                  <button
+                    onClick={() => setShowUpgradeModal(false)}
+                    className='mb-2 rounded-md
+                    bg-[#DF3438]  px-4 py-2 text-xs text-white  transition-all ease-in-out hover:bg-[#ee3033]'
+                  >
+                    Ok, I am waiting!
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            onClick={() => setShowUpgradeModal(false)}
+            className='fixed inset-0 z-50 cursor-pointer bg-black opacity-25'
+          ></div>
+        </>
+      )}
     </>
   );
 }
-//  mx-auto  w-full
