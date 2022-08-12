@@ -95,7 +95,7 @@ export default function Card({
         <>
           <div className='fixed inset-0 z-[9999] mx-auto flex w-auto max-w-[360px] overflow-y-auto overflow-x-hidden outline-none focus:outline-none'>
             <div className='relative my-6 mx-auto flex w-auto max-w-[360px] items-center justify-center'>
-              <div className='relative flex w-full max-w-[90%] flex-col items-center gap-3 rounded-md border border-white bg-white p-7 text-center shadow-lg outline-none focus:outline-none dark:bg-black-900 sm:max-w-[600px]'>
+              <div className='relative flex w-full max-w-[90%] flex-col items-center gap-3 rounded-md bg-white p-7 text-center shadow-lg outline-none focus:outline-none dark:bg-black-900 sm:max-w-[600px]'>
                 <NextImage
                   width={60}
                   height={60}
