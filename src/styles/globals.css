@@ -175,3 +175,6 @@ header.move-left {
 [data-reach-slider-track][data-orientation='horizontal'] {
   border: 0.2px solid #dbdadb;
 }
+.dark [data-reach-slider-track][data-orientation='horizontal'] {
+  border: none;
+}
