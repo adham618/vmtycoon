@@ -10,6 +10,9 @@ const wallets = [
     PendingBalance: '11.1609',
     BusinessesActive: '964.02',
     perDay: '405',
+    firstBtn: 'Claim All',
+    secondBtn: 'Deposit',
+    thirdBtn: 'Withdraw',
   },
   {
     id: 1,
@@ -19,6 +22,9 @@ const wallets = [
     PendingBalance: '11.1609',
     BusinessesActive: '964.02',
     perDay: '405',
+    firstBtn: 'Claim',
+    secondBtn: 'Trade',
+    thirdBtn: '',
   },
 ];
 export default function Wallets() {
@@ -35,6 +41,10 @@ export default function Wallets() {
               PendingBalance={wallet.PendingBalance}
               BusinessesActive={wallet.BusinessesActive}
               perDay={wallet.perDay}
+              firstBtn={wallet.firstBtn}
+              secondBtn={wallet.secondBtn}
+              thirdBtn={wallet.thirdBtn}
+              className={`${wallet.thirdBtn === '' && 'hidden'}`}
             />
           ))}
         </div>

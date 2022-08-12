@@ -1,25 +1,35 @@
 import Slider from '@reach/slider';
 import * as React from 'react';
 
+import clsxm from '@/lib/clsxm';
+
 import ButtonArrow from '@/components/buttons/ButtonArrow';
 import NextImage from '@/components/NextImage';
 
 type WalletProps = {
+  className?: string;
   image: string;
   title: string;
   YourBalance: string;
   PendingBalance: string;
   BusinessesActive: string;
   perDay: string;
+  firstBtn: string;
+  secondBtn: string;
+  thirdBtn?: string;
 } & React.ComponentPropsWithoutRef<'a'>;
 
 export default function Wallet({
+  className,
   image,
   title,
   YourBalance,
   PendingBalance,
   BusinessesActive,
   perDay,
+  firstBtn,
+  secondBtn,
+  thirdBtn,
 }: WalletProps) {
   const [showTradeModal, setShowTradeModal] = React.useState(false);
   const [Range, setRange] = React.useState(83);
@@ -64,14 +74,7 @@ export default function Wallet({
           <li className='px-2'>
             <ButtonArrow
               className='mt-4 py-2 px-4'
-              content='Claim ALL'
-              href='#'
-            />
-          </li>
-          <li className='px-2'>
-            <ButtonArrow
-              className='mt-4 py-2 px-4'
-              content='Deposit'
+              content={firstBtn}
               href='#'
             />
           </li>
@@ -79,7 +82,15 @@ export default function Wallet({
             <ButtonArrow
               onClick={() => setShowTradeModal(true)}
               className='mt-4 py-2 px-4'
-              content='Withdraw'
+              content={secondBtn}
+              href='#'
+            />
+          </li>
+          <li className={clsxm('px-2', className)}>
+            <ButtonArrow
+              onClick={() => setShowTradeModal(true)}
+              className='mt-4 py-2 px-4'
+              content={thirdBtn}
               href='#'
             />
           </li>
