@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 
@@ -13,12 +14,21 @@ function MyApp({ Component, pageProps }: AppProps) {
     new WOW().init();
   }, []);
   return (
-    <ThemeProvider attribute='class' defaultTheme='system'>
-      <Layout>
-        <MouseCursor />
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <Head>
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1, shrink-to-fit=no'
+          key='viewport'
+        />
+      </Head>
+      <ThemeProvider attribute='class' defaultTheme='system'>
+        <Layout>
+          <MouseCursor />
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
   );
 }
 export default MyApp;
