@@ -40,7 +40,7 @@ export default function ButtonArrow({
             clipRule='evenodd'
           />
         </svg>
-        <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
+        <span className='absolute top-[-10%] right-[-130px] block h-[200px] w-[200px] overflow-hidden rounded-[50%] bg-[rgb(255,255,255,.2)] transition-all duration-[1s]'></span>
       </a>
     </Link>
   );
