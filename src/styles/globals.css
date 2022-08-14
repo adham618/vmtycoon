@@ -178,3 +178,7 @@ header.move-left {
 .dark [data-reach-slider-track][data-orientation='horizontal'] {
   border: none;
 }
+#__next {
+  min-width: 100% !important;
+  max-width: 100% !important;
+}
