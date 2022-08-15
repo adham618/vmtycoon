@@ -5,7 +5,7 @@ import Modal from '@/components/Modal';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const links = [
-  { href: '/Home', label: 'Home' },
+  { href: '/', label: 'Home' },
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/office', label: 'Office' },
   { href: '/toplist', label: 'Toplist' },
