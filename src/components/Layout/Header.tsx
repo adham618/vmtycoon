@@ -5,11 +5,10 @@ import Modal from '@/components/Modal';
 import ThemeToggle from '@/components/ThemeToggle';
 
 const links = [
-  { href: '/', label: 'Home' },
+  { href: '/Home', label: 'Home' },
   { href: '/marketplace', label: 'Marketplace' },
   { href: '/office', label: 'Office' },
   { href: '/toplist', label: 'Toplist' },
-  { href: '/help', label: 'Help' },
 ];
 
 export default function Header() {
