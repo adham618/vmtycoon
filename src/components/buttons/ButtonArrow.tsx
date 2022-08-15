@@ -21,7 +21,7 @@ export default function ButtonArrow({
     <Link href={href} {...rest}>
       <a
         className={clsxm(
-          'btn wow animate__animated animate__fadeInUp relative my-0 mx-auto flex w-max items-center overflow-x-hidden rounded-[100px] bg-blue-gradient py-4  px-8 text-center font-poppins text-[16px] font-normal text-white shadow-btn outline-none lg:inline-flex lg:items-center lg:justify-center lg:whitespace-nowrap',
+          'btn wow animate__animated animate__fadeInUp relative my-0 mx-auto flex w-max items-center overflow-hidden rounded-[100px] bg-blue-gradient py-4  px-8 text-center font-poppins text-[16px] font-normal text-white shadow-btn outline-none lg:inline-flex lg:items-center lg:justify-center lg:whitespace-nowrap',
           className
         )}
         data-wow-delay={wowDelay}
